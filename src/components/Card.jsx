@@ -6,19 +6,19 @@ function Card ({id, placement, selected, onClick, className = '', image, date, c
     const [did, setDid] = useState(null);
 
     useEffect(() => {// Math.floor(Date.now() / 1000)
-        console.log(1701734400);
-        console.log(date);
-        console.log(1701734400 > date);
-        console.log(' '); 
-        if (1701734400 > date){
-            setDid(false);
-        }
-    },[])
-
-    
+        if(JSON.parse(localStorage.getItem('advancement'))){
+            /* console.log(1701734400);
+            console.log(date);
+            console.log(1701734400 > date);
+            console.log(' '); */
+            if (1701734400 > date){
+                setDid(JSON.parse(localStorage.getItem('advancement'))[id - 1])
+            }
+        }        
+    },[JSON.parse(localStorage.getItem('advancement'))])    
 
     return (<div className={`card `} style={{gridArea: placement, zIndex: 30 - id}} >
-        <div className={`cardContent ${className} ${(selected ? ' isFlip' : '')}`} onMouseDown={onClick}>
+        <div className={`cardContent ${className} ${(selected ? ' isFlip' : '')}`} onMouseDown={did !== null ? onClick : null}>
             <div className={`card ${className}`}>
                 <img src={image}/>
                 {did !== null && <img className="state" src={did ? enable : disable} />}

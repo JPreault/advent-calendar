@@ -1,6 +1,7 @@
 @use "../utilities/mixins" as *;
 
 .calendar {
+    z-index: 1;
     padding: min(5vh, 5vw);
     display: grid;
     grid-template-columns: repeat(7, 100px);
