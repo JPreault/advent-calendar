@@ -50,5 +50,7 @@ export function numberToLetter(number) {
             return "x";
         case 25:
             return "y";
+        default:
+            return "a";
     }
 }

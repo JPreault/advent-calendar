@@ -4,7 +4,7 @@ import answers from '../answer.json';
 import questions from '../question.json';
 import compliments from '../compliment.json';
 
-function ComplimentModal ({id}) {
+function ComplimentModal({ id }) {
     const [value, setValue] = useState('');
     const [error, setError] = useState(false);
     const [win, setWin] = useState(JSON.parse(localStorage.getItem('advancement'))[id - 1]);
@@ -15,8 +15,8 @@ function ComplimentModal ({id}) {
 
     function submit() {
         const answer = value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        const goodAnswer =  (answers[id]).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        if(answer === goodAnswer){
+        const goodAnswer = (answers[id]).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        if (answer === goodAnswer) {
             setError(false);
             const advancement = JSON.parse(localStorage.getItem('advancement'));
             advancement[id - 1] = true;
@@ -31,11 +31,11 @@ function ComplimentModal ({id}) {
         ? <p>{compliments[id]}</p>
         : <>
             <p className="title">Compliment du jour</p>
-            <p className="description">Trouve la réponse pour découvrir ce que je pense de toi :</p>
+            <p className="description">Trouve le personnage (prénom seulement) pour découvrir ce que je pense de toi :</p>
             <p className="sentence">{questions[id]}</p>
             <div className={"inputField" + (error ? ' error' : '')}>
                 <input className="answer" placeholder="Réponse " value={value} onChange={onChange}></input>
-                <img src={check} className="submit" onClick={submit}/>
+                <img src={check} className="submit" onClick={submit} />
             </div>
         </>
     );
