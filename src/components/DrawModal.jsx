@@ -2,7 +2,7 @@ import { useState } from "react";
 import check from "../images/check.svg";
 import answers from '../answer.json';
 import questions from '../question.json';
-import draw from '../images/dessin.png'
+import ReturnDraw from "./ReturnDraw";
 
 function DrawModal ({id}) {
     const [value, setValue] = useState('');
@@ -28,7 +28,7 @@ function DrawModal ({id}) {
     }
 
     return (win
-        ? <img src={draw} className="draw" />
+        ? <ReturnDraw id={id} />
         : <>
             <p className="title">Dessin du jour</p>
             <p className="description">Devine le sujet grâce à la phrase ci-dessous pour découvrir le dessin du jour :</p>
