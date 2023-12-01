@@ -7,7 +7,7 @@ function Card({ id, placement, selected, onClick, className = '', image, date, c
 
     useEffect(() => {
         if (JSON.parse(localStorage.getItem('advancement'))) {
-            if (Math.floor(Date.now() / 1000) + 25 * 86400 > date) {
+            if (Math.floor(Date.now() / 1000) > date) {
                 setDid(JSON.parse(localStorage.getItem('advancement'))[id - 1])
             }
         }

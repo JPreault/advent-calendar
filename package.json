@@ -2,6 +2,8 @@
   "name": "advent-calendar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/adventCalendar",
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -37,13 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "main": "index.js",
-  "repository": "https://github.com/JPreault/advent-calendar.git",
-  "author": "José <jose@preault.com>",
-  "license": "MIT",
-  "homepage": "/adventCalendar/",
-  "devDependencies": {
-    "babel-preset-gatsby": "^3.8.0"
   }
 }
