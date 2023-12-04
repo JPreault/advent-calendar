@@ -1,11 +1,12 @@
 @use "../utilities/mixins" as *;
 
 .calendar {
+    margin: auto 0;
     z-index: 1;
     padding: min(5vh, 5vw);
     display: grid;
-    grid-template-columns: repeat(7, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(7, min(100px, 10vw));
+    grid-template-rows: repeat(4, min(100px, 10vw));
     grid-gap: min(4vw, 4vh);
     grid-template-areas:
         "a b c d e f g"
@@ -15,8 +16,8 @@
     ;
 
     @include tablet-mobile {
-        grid-template-columns: repeat(3, 120px);
-        grid-template-rows: repeat(9, 120px);
+        grid-template-columns: repeat(3, min(120px, 25vw));
+        grid-template-rows: repeat(9, min(120px, 25vw));
         grid-template-areas:
             "a b c"
             "d e f"
