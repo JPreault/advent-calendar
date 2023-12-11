@@ -4,6 +4,8 @@ import draw3 from "../draw/snk2.png"
 import draw4 from "../draw/tokyorevenger1.png"
 import draw5 from "../draw/seiya1.png"
 import draw6 from "../draw/snk1.png"
+import draw7 from "../draw/mha1.png"
+import draw8 from "../draw/nana1.png"
 
 function ReturnDraw({ id }) {
     function chooseDraw(day) {
@@ -21,9 +23,9 @@ function ReturnDraw({ id }) {
             case 11:
                 return <img src={draw6} className="draw" />
             case 13:
-                return <p className="commingSoon">Encore en cours mais tu le recevra dès qu'il sera finit...</p>
+                return <img src={draw7} className="draw" />
             case 15:
-                return <p className="commingSoon">Encore en cours mais tu le recevra dès qu'il sera finit...</p>
+                return <img src={draw8} className="draw" />
             case 17:
                 return <p className="commingSoon">Encore en cours mais tu le recevra dès qu'il sera finit...</p>
             case 19:
